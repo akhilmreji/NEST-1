@@ -1,0 +1,38 @@
+{"level":"error","message":"Fri Aug 26 2022 22:53:20 GMT+0530 (India Standard Time)-{\"name\":\"Data Not found\",\"statusCode\":{},\"isOperational\":true}","private":true}
+{"level":"error","message":"Fri Aug 26 2022 22:54:56 GMT+0530 (India Standard Time)-{\"name\":\"Data Not found\",\"statusCode\":{},\"isOperational\":true}","private":true}
+{"level":"error","message":"Fri Aug 26 2022 23:16:39 GMT+0530 (India Standard Time)-{\"name\":\"Data Not found\",\"statusCode\":{},\"isOperational\":true}","private":true}
+{"level":"error","message":"Fri Aug 26 2022 23:19:46 GMT+0530 (India Standard Time)-{\"name\":\"Data Not found\",\"statusCode\":{},\"isOperational\":true}","private":true}
+{"level":"error","message":"Fri Aug 26 2022 23:20:15 GMT+0530 (India Standard Time)-{\"name\":\"Data Not found\",\"statusCode\":{},\"isOperational\":true}","private":true}
+{"level":"error","message":"Fri Aug 26 2022 23:23:10 GMT+0530 (India Standard Time)-{\"expose\":true,\"statusCode\":400,\"status\":400,\"body\":\"{\\r\\n    \\\"email\\\":\\\"Raunakkumar.india@gmail.com\\\",\\r\\n    \\\"password\\\":\\\"hello\\\",\\r\\n    \\\"account\\\":\\\"7838075877\\\",\\r\\n    \\\"phonr\\\":\\\"783803223\\\",\\r\\n}\",\"type\":\"entity.parse.failed\"}","private":true}
+{"level":"error","message":"Fri Aug 26 2022 23:24:06 GMT+0530 (India Standard Time)-{\"expose\":true,\"statusCode\":400,\"status\":400,\"body\":\"{\\r\\n    \\\"email\\\":\\\"Raunakkumar.india@gmail.com\\\",\\r\\n    \\\"password\\\":\\\"hello\\\",\\r\\n    \\\"account\\\":\\\"7838075877\\\",\\r\\n    \\\"phone\\\":\\\"783803223\\\",\\r\\n}\",\"type\":\"entity.parse.failed\"}","private":true}
+{"level":"error","message":"Fri Aug 26 2022 23:28:46 GMT+0530 (India Standard Time)-{\"expose\":true,\"statusCode\":400,\"status\":400,\"body\":\"{\\r\\n    \\\"email\\\":\\\"Raunakkumar.india@gmail.com\\\",\\r\\n    \\\"password\\\":\\\"hello\\\",\\r\\n    \\\"phone\\\":\\\"7838075877\\\",\\r\\n\\r\\n}\",\"type\":\"entity.parse.failed\"}","private":true}
+{"level":"error","message":"Fri Aug 26 2022 23:31:22 GMT+0530 (India Standard Time)-{\"expose\":true,\"statusCode\":400,\"status\":400,\"body\":\"{\\r\\n    \\\"email\\\":\\\"Raunakkumar@gmail.com\\\",\\r\\n    \\\"password\\\":\\\"hello\\\",\\r\\n    \\\"phone\\\":\\\"7838075877\\\",\\r\\n}\",\"type\":\"entity.parse.failed\"}","private":true}
+{"level":"error","message":"Fri Aug 26 2022 23:31:55 GMT+0530 (India Standard Time)-{\"name\":\"Data Not found\",\"statusCode\":{},\"isOperational\":true}","private":true}
+{"level":"error","message":"Fri Aug 26 2022 23:33:12 GMT+0530 (India Standard Time)-{\"name\":\"Data Not found\",\"statusCode\":{},\"isOperational\":true}","private":true}
+{"level":"error","message":"Fri Aug 26 2022 23:54:03 GMT+0530 (India Standard Time)-{\"name\":\"Data Not found\",\"statusCode\":{},\"isOperational\":true}","private":true}
+{"level":"error","message":"Fri Aug 26 2022 23:54:32 GMT+0530 (India Standard Time)-{\"name\":\"Data Not found\",\"statusCode\":{},\"isOperational\":true}","private":true}
+{"level":"error","message":"Fri Aug 26 2022 23:55:23 GMT+0530 (India Standard Time)-{\"name\":\"Data Not found\",\"statusCode\":{},\"isOperational\":true}","private":true}
+{"level":"error","message":"Sat Aug 27 2022 01:20:17 GMT+0530 (India Standard Time)-{\"name\":\"Data Not found\",\"statusCode\":{},\"isOperational\":true}","private":true}
+{"level":"error","message":"Sat Aug 27 2022 02:36:41 GMT+0530 (India Standard Time)-{\"name\":\"Data Not found\",\"statusCode\":{},\"isOperational\":true}","private":true}
+{"level":"error","message":"Sat Aug 27 2022 02:39:49 GMT+0530 (India Standard Time)-{\"name\":\"Data Not found\",\"statusCode\":{},\"isOperational\":true}","private":true}
+{"level":"error","message":"Sat Aug 27 2022 02:41:14 GMT+0530 (India Standard Time)-{\"name\":\"Data Not found\",\"statusCode\":{},\"isOperational\":true}","private":true}
+{"level":"error","message":"Sat Aug 27 2022 02:57:59 GMT+0530 (India Standard Time)-{}","private":true}
+{"level":"error","message":"Sat Aug 27 2022 02:59:46 GMT+0530 (India Standard Time)-{}","private":true}
+{"level":"error","message":"Sat Aug 27 2022 04:33:13 GMT+0530 (India Standard Time)-{\"name\":\"Data Not found\",\"statusCode\":{},\"isOperational\":true}","private":true}
+{"level":"error","message":"Sat Aug 27 2022 10:13:55 GMT+0530 (India Standard Time)-{\"name\":\"Data Not found\",\"statusCode\":{},\"isOperational\":true}","private":true}
+{"level":"error","message":"Sat Aug 27 2022 11:03:45 GMT+0530 (India Standard Time)-{\"name\":\"Data Not found\",\"statusCode\":{},\"isOperational\":true}","private":true}
+{"level":"error","message":"Sat Aug 27 2022 11:04:13 GMT+0530 (India Standard Time)-{\"name\":\"Data Not found\",\"statusCode\":{},\"isOperational\":true}","private":true}
+{"level":"error","message":"Sat Aug 27 2022 14:18:05 GMT+0530 (India Standard Time)-{\"name\":\"Data Not found\",\"statusCode\":{},\"isOperational\":true}","private":true}
+{"level":"error","message":"Sat Aug 27 2022 14:19:24 GMT+0530 (India Standard Time)-{\"name\":\"Data Not found\",\"statusCode\":{},\"isOperational\":true}","private":true}
+{"level":"error","message":"Sat Aug 27 2022 14:24:31 GMT+0530 (India Standard Time)-{\"name\":\"Data Not found\",\"statusCode\":{},\"isOperational\":true}","private":true}
+{"level":"error","message":"Sat Aug 27 2022 15:59:37 GMT+0530 (India Standard Time)-{}","private":true}
+{"level":"error","message":"Sat Aug 27 2022 16:00:26 GMT+0530 (India Standard Time)-{}","private":true}
+{"level":"error","message":"Sat Aug 27 2022 16:00:39 GMT+0530 (India Standard Time)-{}","private":true}
+{"level":"error","message":"Sat Aug 27 2022 16:05:59 GMT+0530 (India Standard Time)-{}","private":true}
+{"level":"error","message":"Sat Aug 27 2022 16:06:19 GMT+0530 (India Standard Time)-{}","private":true}
+{"level":"error","message":"Sat Aug 27 2022 16:07:16 GMT+0530 (India Standard Time)-{}","private":true}
+{"level":"error","message":"Sat Aug 27 2022 16:07:57 GMT+0530 (India Standard Time)-{}","private":true}
+{"level":"error","message":"Sat Aug 27 2022 16:08:34 GMT+0530 (India Standard Time)-{}","private":true}
+{"level":"error","message":"Sat Aug 27 2022 16:09:45 GMT+0530 (India Standard Time)-{\"name\":\"Data Not found\",\"statusCode\":{},\"isOperational\":true}","private":true}
+{"level":"error","message":"Sat Aug 27 2022 16:11:17 GMT+0530 (India Standard Time)-{\"name\":\"Data Not found\",\"statusCode\":{},\"isOperational\":true}","private":true}
+{"level":"error","message":"Sat Aug 27 2022 16:12:47 GMT+0530 (India Standard Time)-{\"name\":\"Data Not found\",\"statusCode\":{},\"isOperational\":true}","private":true}
