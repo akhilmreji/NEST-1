@@ -15,7 +15,7 @@ module.exports.PublishCustomerEvent = async(payload) => {
         })
 }
 
-module.exports.PublishShoppingEvent = async(payload) => {
+module.exports.PublishMtmxconversionEvent = async(payload) => {
         axios.post('http://localhost:8000/mt/app-events', {
                 payload
         })

@@ -2,7 +2,7 @@ const express = require('express');
 const cors  = require('cors');
 const { mtmxconversion, appEvents  } = require('./api');
 const HandleErrors = require('./utils/error-handler')
-
+var bodyParser = require('body-parser')
 
 module.exports = async (app) => {
 
@@ -10,6 +10,9 @@ module.exports = async (app) => {
     app.use(express.urlencoded({ extended: true, limit: '1mb'}));
     app.use(cors());
     app.use(express.static(__dirname + '/public'))
+
+    app.use(bodyParser.urlencoded({ extended: false }))
+     app.use(bodyParser.json())
 
     //Listeners
     appEvents(app);

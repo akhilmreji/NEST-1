@@ -1,28 +1,20 @@
 const { verify } = require('jsonwebtoken');
 const mtmxconversionervice = require('../services/mtmxconversion-service');
-const { PublishCustomerEvent, PublishShoppingEvent } = require('../utils');
+const { PublishCustomerEvent, PublishMtmxconversionEvent } = require('../utils');
 const UserAuth = require('./middlewares/auth')
+var bodyParser = require('body-parser')
 
 module.exports = (app) => {
     const service = new mtmxconversionervice();
     app.post('/MT/validation', async(req,res,next) => {
         try {
             const { mt } = req.body; 
-            return res.json({success:"verified successfully",MT:mt});
+            return res.json(JSON.stringify({mt:req.body}))
+            // return res.json({success:"verified successfully",mt:mt});
         } catch (err) {
             next(err)    
         }
     });
-    app.post('/datavalidation', async(req,res,next) => {
-        try {
-            const {  } = req.body; 
-            // const { data } =  await service.CreateProduct({ });
-            return res.json({success:"verified successfully"});
-        } catch (err) {
-            next(err)    
-        }
-    });
-   
     app.post('/mtmx/conversion', async(req,res,next) => {
         try {
             const {  } = req.body; 
@@ -67,7 +59,7 @@ module.exports = (app) => {
                 </FIToFICstmrCdtTrf>
             </Document>`;
             // const { data } =  await service.MtMxConversion({  });
-            return res.json(xml);
+            return res.json(res.body);
         } catch (err) {
             next(err)    
         }
@@ -84,7 +76,7 @@ module.exports = (app) => {
             // const { data } = await  service.GetProductPayload(_id, { productId: req.body._id, qty: req.body.qty },'ADD_TO_CART') 
 
             PublishCustomerEvent(data);
-            PublishShoppingEvent(data)
+            PublishMtmxconversionEvent(data)
 
             const response = {
                 product: data.data.product,
@@ -99,15 +91,15 @@ module.exports = (app) => {
     });
     
    
-    app.get('/', async (req,res,next) => {
-        //check validation
-        try {
-            const { data} = await service.Getmtmxconversion();        
-            return res.status(200).json(data);
-        } catch (error) {
-            next(err)
-        }
+    // app.get('/', async (req,res,next) => {
+    //     //check validation
+    //     try {
+    //         const { data} = await service.Getmtmxconversion();        
+    //         return res.status(200).json(data);
+    //     } catch (error) {
+    //         next(err)
+    //     }
         
-    });
+    // });
     
 }

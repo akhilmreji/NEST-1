@@ -9,11 +9,11 @@ services:
     volumes:
       - ./db/:/data/db
 
-  products:
+  Mtvalidation:
     build:
       dockerfile: Dockerfile
-      context: ./products
-    container_name: products
+      context: ./Mtvalidation
+    container_name: Mtvalidation
     ports:
       - "8002:8002"
     restart: always
@@ -21,13 +21,13 @@ services:
       - "nosql-db"
     volumes:
       - .:/app
-      - /app/products/node_modules
+      - /app/Mtvalidation/node_modules
 
-  shopping:
+  Mtmxconversion:
     build:
       dockerfile: Dockerfile
-      context: ./shopping
-    container_name: shopping
+      context: ./Mtmxconversion
+    container_name: Mtmxconversion
     ports:
       - "8003:8003"
     restart: always
@@ -35,7 +35,7 @@ services:
       - "nosql-db"
     volumes:
       - .:/app
-      - /app/shopping/node_modules
+      - /app/Mtmxconversion/node_modules
 
   customer:
     build:
@@ -55,8 +55,8 @@ services:
       dockerfile: Dockerfile
       context: ./proxy
     depends_on:
-      - products
-      - shopping
+      - Mtvalidation
+      - Mtmxconversion
       - customer
     ports:
       - "80:80"
