@@ -1,6 +1,6 @@
 const express = require('express');
 const cors  = require('cors');
-const { mtmxconversion, appEvents  } = require('./api');
+const { mtmxconverter, appEvents  } = require('./api');
 const HandleErrors = require('./utils/error-handler')
 var bodyParser = require('body-parser')
 
@@ -18,7 +18,7 @@ module.exports = async (app) => {
     appEvents(app);
 
     //api
-    mtmxconversion(app);
+    mtmxconverter(app);
 
     // error handling
     app.use(HandleErrors);

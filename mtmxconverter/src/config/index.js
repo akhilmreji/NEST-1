@@ -7,7 +7,7 @@ if (process.env.NODE_ENV !== 'prod') {
     dotEnv.config();
 }
 
-port=5001 || process.env.NODE_ENV
+port= process.env.PORT ||5002 
 APP_SECRETs="R4UN4KKUM4R"
 module.exports = {
     PORT: port,

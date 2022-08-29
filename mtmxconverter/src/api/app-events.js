@@ -5,7 +5,7 @@ module.exports = (app) => {
 
         const { payload } = req.body;
 
-        console.log("===============  mtmxconversion Service Received Event ====== ");
+        console.log("===============  mtmxconverter Service Received Event ====== ");
         return res.status(200).json(payload);
 
     });

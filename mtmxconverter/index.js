@@ -6,10 +6,10 @@ app.use(express.json());
 
 app.use('/', (req,res,next) => {
 
-    return res.status(200).json({"msg": "Hello from mtmxconversion"})
+    return res.status(200).json({"msg": "Hello from mtmxconverter"})
 })
 
 
 app.listen(8002, () => {
-    console.log('mtmxconversion is Listening to Port 8002')
+    console.log('mtmxconverter is Listening to Port 8002')
 })

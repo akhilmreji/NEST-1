@@ -9,33 +9,29 @@ services:
     volumes:
       - ./db/:/data/db
 
-  Mtvalidation:
+  mtvalidation:
     build:
       dockerfile: Dockerfile
-      context: ./Mtvalidation
-    container_name: Mtvalidation
+      context: ./mtvalidation
+    container_name: mtvalidation
     ports:
-      - "8002:8002"
+      - "5003:5003"
     restart: always
-    depends_on:
-      - "nosql-db"
-    volumes:
-      - .:/app
-      - /app/Mtvalidation/node_modules
+    # volumes:
+      # - .:/app
+      # - /app/mtvalidation/node_modules
 
-  Mtmxconversion:
+  mtmxconverter:
     build:
       dockerfile: Dockerfile
-      context: ./Mtmxconversion
-    container_name: Mtmxconversion
+      context: ./mtmxconverter
+    container_name: mtmxconverter
     ports:
-      - "8003:8003"
+      - "5002:5002"
     restart: always
-    depends_on:
-      - "nosql-db"
-    volumes:
-      - .:/app
-      - /app/Mtmxconversion/node_modules
+    # volumes:
+      # - .:/app
+      # - /mtmxconverter/node_modules
 
   customer:
     build:
@@ -43,21 +39,22 @@ services:
       context: ./customer
     container_name: customer
     ports:
-      - "8001:8001"
+      - "5001:5001"
     restart: always
     depends_on:
       - "nosql-db"
-    volumes:
-      - .:/app
-      - /app/customer/node_modules
+    # volumes:
+      # - .:/app
+      # - /app/customer/node_modules
+
   nginx-proxy:
     build:
       dockerfile: Dockerfile
       context: ./proxy
     depends_on:
-      - Mtvalidation
-      - Mtmxconversion
+      - mtvalidation
+      - mtmxconverter
       - customer
     ports:
-      - "80:80"
+      - "81:81"
  

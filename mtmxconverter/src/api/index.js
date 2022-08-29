@@ -1,5 +1,5 @@
 
 module.exports = {
-    mtmxconversion: require('./mtmxconversion'),
+    mtmxconverter: require('./mtmxconverter'),
     appEvents: require('./app-events')
 }

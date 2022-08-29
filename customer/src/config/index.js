@@ -6,13 +6,13 @@ if (process.env.NODE_ENV !== 'prod') {
 } else {
     dotEnv.config();
 }
-const Mongo_URI='mongodb://localhost:27017/Nest?directConnection=true'
-port=5000
+const Mongo_URI=process.env.MONGODB_URI ||'mongodb://nosql-db:27017/Nest?directConnection=true'
+port= process.env.PORT ||5001
 APP_SECRETs="R4UN4KKUM4R"
 module.exports = {
 
     PORT: port,
     DB_URL:Mongo_URI,
-    APP_SECRET: APP_SECRETs
+    APP_SECRET: APP_SECRETs 
 }
  
