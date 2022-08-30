@@ -5,12 +5,13 @@ const XRegExp = require('xregexp');//cont regexMap
 const { exec } = require("xregexp");
 const incorrectTag=(tagarray)=>
 {
-    var res=0
+    var res;
     tagarray.forEach(tag=>
         {
             if(!fieldTags.includes(tag))
             {   
-                res=1;
+                
+                res=tag;
                 return;
             }
         })
@@ -28,7 +29,7 @@ const duplicatTags=(tagarray)=>
 
 module.exports = (text) => {
     const fieldArray = text.slice(3).split('\n');
-    var tagArray=[];
+    const tagArray=[];
     var currTag;
     var curTagisNull = 0;
     var fieldarr = []
@@ -44,12 +45,13 @@ module.exports = (text) => {
         {
             var f = field.slice(1).split(":");
             try {
-                if (f[0] == "50F") {
+                if (f[0]==="50F") {
                     
                     if (f[1].charAt(0) === '/') {
                         
-                        var attr = XRegExp.exec(f[1], regexMap.get("50F1")[0])
                         
+                        var attr = XRegExp.exec(f[1],regexMap.get("50F1")[0])
+                        //console.log(attr)
                         fieldarr.push({ tag: f[0], attr: attr.groups })
                         curTagisNull = 0;
                     }
@@ -59,6 +61,7 @@ module.exports = (text) => {
                         fieldarr.push({ tag: f[0], attr: attr.groups })
                         curTagisNull = 0;
                     }
+                    currTag="50F"
                     invalid=0;
                 }
                 else if (regexMap.get(f[0])) 
@@ -81,29 +84,39 @@ module.exports = (text) => {
                 {
                     
                     errors.push("Error in Tag: "+f[0])
+                    //console.log(f[1])
                     invalid=1;
                 }
             }
         
-        else 
+        else
             {
                 if (!curTagisNull&&invalid==0) 
                 {
                     try{
-                    if (!fieldarr[fieldarr.length - 1].data) fieldarr[fieldarr.length - 1].data = []
                     
-                    var attr = XRegExp.exec(field, regexMap.get(currTag)[1])
-                    
-                    fieldarr[fieldarr.length - 1].data.push(attr.groups);
+                    if (!fieldarr[fieldarr.length - 1].data) 
+                    {
+                        fieldarr[fieldarr.length - 1].data = []
                     }
-                    catch(err){//console.log(err)
+                    
+                    var attr = XRegExp.exec(field,regexMap.get(currTag)[1])
+                    
+                    if(attr)fieldarr[fieldarr.length - 1].data.push(attr.groups);
+                    }
+                    catch(err){
+                        //console.log(err)
+                        console.log("error in :"+currTag)
+                        console.log(fieldarr.length)
                     }
                 }
             }
         
     })
-    
-    if(incorrectTag(tagArray))errors.push("Some tags are invalid")
+    console.log(tagArray)
+    var r=incorrectTag(tagArray)
+    if(r)errors.push("Some tags are invalid:"+r)
     if(duplicatTags(tagArray))errors.push("Duplicate Tags")
+    errors=[...new Set(errors)]
     return {fieldarr,errors};
-} 
+}

@@ -4,7 +4,7 @@ const { PublishCustomerEvent, PublishmtmxconverterEvent } = require('../utils');
 const upload = require('./middlewares/file');
 const path=require('path') 
 var p=require('../utils/path')
-p=path.join(p,'MT.txt')
+    p=path.join(p,'MT.txt')
 const convert=require('../convertor/convertor')
 const fieldValidator=require('../validator/field-validator')
 const parseFormat=require('../parser/swift-parser'); 
@@ -15,11 +15,26 @@ module.exports = (app) => {
 
     app.post('/mtmxconvertor',upload.single('mtfile'), async(req,res,next) => { 
         try {
-            var obj=parseFormat(p) 
+            var obj=parseFormat(p)
+                if(obj.basic_header)
+                { 
                 const type=obj.basic_header.appId
                 var errors=fieldValidator(obj.text,type).filter(f=>f!=null)
                 obj.errors.push(...new Set(errors))
-              const response= convert(obj);
+                var response
+                if(obj.errors.length==0)
+                {
+                    response= convert(obj);
+                }
+                else
+                {
+                    response=obj.errors
+                }
+            }
+            else
+            {
+                response="Invalid Basic Header"
+            }
             return res.send(response); 
         } catch (err) {
             console.error(err)
@@ -29,6 +44,8 @@ module.exports = (app) => {
     
     app.post('/mtmxconvertor/obj', async(req,res,next) => { 
         try {
+            console.log("Body")
+            console.log(req.body)
             const response= convert(req.body);
             return res.send(response);
         } catch (err) {

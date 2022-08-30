@@ -5,13 +5,18 @@ function isValidDate(date)
     var y,m,d
     if(date.length==8)
     {
-        y=parseInt(data.slice(0,4))
+        //console.log(y+m+d)
+        y=parseInt(date.slice(0,4))
         m=parseInt(date.slice(4,6));
         d=parseInt(date.slice(6,8));
+        //console.log(y+" "+m+" "+d)
     }
+    else
+    {
     y=parseInt(date.slice(0,2));
     m=parseInt(date.slice(2,4));
     d=parseInt(date.slice(4,6));
+    }
 
     if(((y>0)&((m>=1)&&(m<=12))&(d>=1&&d<=31)))return 1
     else return 0
@@ -121,6 +126,7 @@ module.exports=(fieldarray,type)=>{
                         if(!dataCodes.codes2.includes(attr.code))err="T08"
                         break;
             default:
+                break
                 }
                 errarray.push(err)
             }

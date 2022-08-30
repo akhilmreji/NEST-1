@@ -80,19 +80,26 @@ module.exports=(fieldarray,type)=>{
                         if(!isValidAmount(amount))err="C03,T40,T43"
                     break;
                   
+            
             case "50F":
                         var terr=[]
                         var attr=field.attr
-                        const len=Object.keys(attr).length;
+                        var len=Object.keys(attr).length;
                         if(len>1)//50F2
                         {
                             if(!dataCodes.party_code.includes(attr.code))terr.push("T55")
                             if(!isValidCountryCode(attr.countrycode))terr.push("T55")
                         }
                         //validating data
-                        const data=field.data;
+                        var data=field.data;
+                        
                         //first line should be number 1
-                        if(!data[0].number==="1")terr.push("T56")
+                        
+                        if(!(data[0].number==="1"))
+                        {
+                           
+                            terr.push("T56")
+                        }
                         //number should be between 1and 8
                         if(data.find(data=>(data.number>8||data.number<1)))terr.push("T56")
                         data.forEach(d => {
@@ -115,6 +122,38 @@ module.exports=(fieldarray,type)=>{
                         });
                         errarray.push(...new Set(terr))
                         break;
+            
+            case "59F":
+                        var terr=[]
+                        var attr=field.attr
+                        console.log(field.data.length)
+                        if((field.data.length))
+                        {
+                            var len=Object.keys(attr).length;
+                            //validating data
+                            var data=field.data;
+                            
+                            //first line should be number 1
+                            
+                            if(!(data[0].number==="1"))
+                            {
+                            
+                                terr.push("T56")
+                            }
+                            //number should be between 1and 8
+                            var ff=data.find(d=>d.number==="3")
+                            if(ff)
+                            {
+                                if(!isValidCountryCode(ff.name.slice(0,2)))terr.push("T56")
+                            }
+                            if(data.find(data=>(data.number>4||data.number<1)))terr.push("T56")
+                            
+                            errarray.push(...new Set(terr))
+                        }
+                        else
+                        err="Invalid 59F value"
+                    break;
+
                         
             case "71A":
                         var attr=field.attr;

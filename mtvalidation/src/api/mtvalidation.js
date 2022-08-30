@@ -1,7 +1,7 @@
 const { verify } = require('jsonwebtoken');
 const mtvalidationervice = require('../services/mtvalidation-service');
 const { PublishCustomerEvent, PublishmtmxconverterEvent } = require('../utils');
-
+const validate=require('../validator/validator')
 const upload = require('./middlewares/file');
             const path=require('path')
             const fieldValidator=require('../validator/field-validator')
@@ -23,10 +23,7 @@ obj.errors.push(...new Set(errors))
               
     app.post('/mt/validation',upload.single('mtfile'),async(req,res)=>{
         try {
-                var obj=parseFormat(p) 
-                const type=obj.basic_header.appId
-                var errors=fieldValidator(obj.text,type).filter(f=>f!=null)
-                obj.errors.push(...new Set(errors))
+                const obj=validate(p)
              
             // PublishCustomerEvent(data);
             // PublishmtmxconverterEvent(data)
